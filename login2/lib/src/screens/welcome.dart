@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Welcome extends StatelessWidget {
+  final double height;
+  final double width;
+
+  Welcome({
+    this.height,
+    this.width
+  });
+
   Widget build(BuildContext context) {
+    double leftPadding = width * 0.1;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -12,7 +21,7 @@ class Welcome extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 40),
+        padding: EdgeInsets.only(left: leftPadding, right: leftPadding),
         child: buildBody(),
       ),
     );
@@ -42,7 +51,7 @@ class Welcome extends StatelessWidget {
         children: <Widget>[
           Spacer(),
           Text(
-            "See whats's",
+            "See what's",
             style: myStyle,
           ),
           Text(
@@ -71,7 +80,7 @@ class Welcome extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(
                 vertical: 10.0,
-                horizontal: 80.0,
+                horizontal: width/5,
               ),
               child: Text(
                 "Create account",
