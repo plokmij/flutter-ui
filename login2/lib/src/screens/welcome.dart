@@ -13,6 +13,7 @@ class Welcome extends StatelessWidget {
     double leftPadding = width * 0.1;
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         backgroundColor: Colors.white,
         title: Icon(
           Icons.ac_unit,

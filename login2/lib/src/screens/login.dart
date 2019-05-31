@@ -8,7 +8,9 @@ class Login extends StatelessWidget {
   );
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        elevation: 0.0,
         backgroundColor: Colors.white,
         title: Icon(
           Icons.ac_unit,

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'screens/signup.dart';
 import 'screens/login.dart';
 
 class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: PreLoad(),
+      home: Signup(),
     );
   }
 }
