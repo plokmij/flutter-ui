@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome.dart';
+import 'screens/login.dart';
 
 class App extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -11,11 +11,8 @@ class App extends StatelessWidget {
 
 class PreLoad extends StatelessWidget {
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
-    return Welcome(
-      width: width,
-      height: height,
-    );
+    //final double width = MediaQuery.of(context).size.width;
+    //final double height = MediaQuery.of(context).size.height;
+    return Login();
   }
 }
