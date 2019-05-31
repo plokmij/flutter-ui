@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'welcome.dart';
 
 class Signup extends StatelessWidget {
   final TextStyle appBarSignUpButtonStyle = TextStyle(
@@ -11,9 +12,14 @@ class Signup extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.0,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.blue,
+        leading: InkWell(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back,
+            color: Colors.blue,
+          ),
         ),
         backgroundColor: Colors.white,
         title: Icon(
@@ -21,7 +27,6 @@ class Signup extends StatelessWidget {
           color: Colors.blue,
         ),
         centerTitle: true,
-        
       ),
       body: buildBody(context),
     );
@@ -35,20 +40,19 @@ class Signup extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-                child: Text(
-                  "Create your account",
-                  textAlign: TextAlign.center,
-                  style: myStyle,
-                ),
-              ),
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+          child: Text(
+            "Create your account",
+            textAlign: TextAlign.center,
+            style: myStyle,
+          ),
+        ),
         Spacer(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              
               TextField(
                 decoration: InputDecoration(
                   labelText: "Name",

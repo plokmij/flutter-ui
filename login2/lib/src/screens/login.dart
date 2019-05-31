@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'signup.dart';
 
 class Login extends StatelessWidget {
-  TextStyle appBarSignUpButtonStyle = TextStyle(
+  final TextStyle appBarSignUpButtonStyle = TextStyle(
     color: Colors.blue,
     fontSize: 15,
     fontWeight: FontWeight.w500,
@@ -14,16 +15,21 @@ class Login extends StatelessWidget {
         backgroundColor: Colors.white,
         title: Icon(
           Icons.ac_unit,
-          color: Colors.grey,
+          color: Colors.blue,
         ),
         centerTitle: true,
         actions: <Widget>[
-          Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
-                "Sign up",
-                style: appBarSignUpButtonStyle,
+          InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Signup()));
+            },
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  "Sign up",
+                  style: appBarSignUpButtonStyle,
+                ),
               ),
             ),
           ),
@@ -31,7 +37,7 @@ class Login extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: Icon(
               Icons.more_vert,
-              color: Colors.grey,
+              color: Colors.blue,
             ),
           )
         ],
@@ -47,7 +53,7 @@ class Login extends StatelessWidget {
     );
     return Column(
       children: <Widget>[
-       /* Container(
+        /* Container(
           height: 70,
           width: MediaQuery.of(context).size.width,
           child: Row(

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
+import 'signup.dart';
 
 class Welcome extends StatelessWidget {
   final double height;
   final double width;
 
-  Welcome({
-    this.height,
-    this.width
-  });
+  Welcome({this.height, this.width});
 
   Widget build(BuildContext context) {
     double leftPadding = width * 0.1;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.white,
@@ -22,13 +22,16 @@ class Welcome extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: leftPadding, right: leftPadding),
-        child: buildBody(),
+        padding: EdgeInsets.only(
+          left: leftPadding,
+          right: leftPadding,
+        ),
+        child: buildBody(context),
       ),
     );
   }
 
-  Widget buildBody() {
+  Widget buildBody(BuildContext context) {
     TextStyle myStyle = TextStyle(
       fontSize: 30,
       fontWeight: FontWeight.w700,
@@ -70,18 +73,18 @@ class Welcome extends StatelessWidget {
             height: 30,
           ),
           InkWell(
-            onTap: (){
-              print("null");
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Signup()));
             },
-            onLongPress: (){
+            onLongPress: () {
               print("WTF");
             },
             borderRadius: BorderRadius.all(Radius.circular(25)),
-            
             child: Container(
               padding: EdgeInsets.symmetric(
                 vertical: 10.0,
-                horizontal: width/5,
+                horizontal: width / 5,
               ),
               child: Text(
                 "Create account",
@@ -102,10 +105,16 @@ class Welcome extends StatelessWidget {
                   "Have an account already?",
                   style: bottomText,
                 ),
-                Text(
-                  "Log in",
-                  style: bottomText.copyWith(
-                    color: Colors.blue,
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Login()));
+                  },
+                  child: Text(
+                    "Log in",
+                    style: bottomText.copyWith(
+                      color: Colors.blue,
+                    ),
                   ),
                 ),
               ],
